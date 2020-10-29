@@ -27,3 +27,6 @@ HELP.md
 
 # dependencies
 /reactive-forms/node_modules
+.metadata
+.mvn
+.settings

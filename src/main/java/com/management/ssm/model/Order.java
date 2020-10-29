@@ -13,26 +13,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ORDER_ID;
 
-    @OneToMany(mappedBy = "SALEORDER_ID", cascade = CascadeType.ALL)
-    private Set<Sale> sales = new HashSet<Sale>();
-
     @Column(name = "ORDER_DATE")
     private String ORDER_DATE;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ORDERACCOUNT_ID", unique = true)
-    private Account ORDERACCOUNT_ID;
-
-    @JoinColumn(name = "ORDERORDERSTATUS_ID")
-    @ManyToOne(targetEntity = OrderStatus.class)
-    private OrderStatus ORDERORDERSTATUS_ID;
+    @Column(name = "ORDER_STATUS")
+    private int ORDER_STATUS;
 
     @Column(name = "ORDERIS_ACTIVE")
-    private String ORDERIS_ACTIVE;
-
-    @JoinColumn(name = "ORDERCUSTOMER_ID")
-    @ManyToOne(targetEntity = Customer.class)
-    private Customer ORDERCUSTOMER_ID;
+    private int ORDERIS_ACTIVE;
 
     @JsonIgnore
     @Column(name = "ORDERMODIFIED_BY")
@@ -45,6 +33,13 @@ public class Order {
     @JsonIgnore
     @Column(name = "ORDERMODIFIED_WORKSTATION")
     private String ORDERMODIFIED_WORKSTATION;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ORDERACCOUNT_ID", unique = true)
+    private Account ORDERACCOUNT_ID;
+
+    @OneToMany(mappedBy = "SALEORDER_ID", cascade = CascadeType.ALL)
+    private Set<Sale> sales = new HashSet<Sale>();
 
     public long getORDER_ID() {
         return ORDER_ID;
@@ -78,18 +73,6 @@ public class Order {
         this.ORDERACCOUNT_ID = ORDERACCOUNT_ID;
     }
 
-    public void setORDERORDERSTATUS_ID(OrderStatus ORDERORDERSTATUS_ID) {
-        this.ORDERORDERSTATUS_ID = ORDERORDERSTATUS_ID;
-    }
-
-    public String getORDERIS_ACTIVE() {
-        return ORDERIS_ACTIVE;
-    }
-
-    public void setORDERIS_ACTIVE(String ORDERIS_ACTIVE) {
-        this.ORDERIS_ACTIVE = ORDERIS_ACTIVE;
-    }
-
     public String getORDERMODIFIED_BY() {
         return ORDERMODIFIED_BY;
     }
@@ -114,12 +97,19 @@ public class Order {
         this.ORDERMODIFIED_WORKSTATION = ORDERMODIFIED_WORKSTATION;
     }
 
-    public void setORDERCUSTOMER_ID(Customer ORDERCUSTOMER_ID) {
-        this.ORDERCUSTOMER_ID = ORDERCUSTOMER_ID;
+    public int getORDER_STATUS() {
+        return ORDER_STATUS;
     }
 
-    @JsonIgnore
-    public OrderStatus getORDERORDERSTATUS_ID() {
-        return ORDERORDERSTATUS_ID;
+    public void setORDER_STATUS(int ORDER_STATUS) {
+        this.ORDER_STATUS = ORDER_STATUS;
+    }
+
+    public int getORDERIS_ACTIVE() {
+        return ORDERIS_ACTIVE;
+    }
+
+    public void setORDERIS_ACTIVE(int ORDERIS_ACTIVE) {
+        this.ORDERIS_ACTIVE = ORDERIS_ACTIVE;
     }
 }

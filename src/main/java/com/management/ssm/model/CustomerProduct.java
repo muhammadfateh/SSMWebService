@@ -60,12 +60,12 @@ public class CustomerProduct implements Serializable {
         return CPPRODUCT_ID;
     }
 
-    public boolean equals(Object o){
-        if(this==o)
+    public boolean equals(Object o) {
+        if (this == o)
             return true;
-        if(!(o instanceof CustomerProduct))
+        if (!(o instanceof CustomerProduct))
             return false;
-        CustomerProduct review=(CustomerProduct) o;
+        CustomerProduct review = (CustomerProduct) o;
         return Objects.equals(getCPCUSTOMER_ID().getCUSTOMER_ID(), review.getCPCUSTOMER_ID().getCUSTOMER_ID()) &&
                 Objects.equals(getCPPRODUCT_ID().getPRODUCT_ID(), review.getCPPRODUCT_ID().getPRODUCT_ID());
     }

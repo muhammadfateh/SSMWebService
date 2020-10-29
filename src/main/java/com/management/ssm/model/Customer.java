@@ -25,10 +25,10 @@ public class Customer {
     @Column(name = "CUSTOMERIS_ACTIVE")
     private String CUSTOMERIS_ACTIVE;
 
-    @OneToMany(mappedBy = "ORDERCUSTOMER_ID", cascade = CascadeType.ALL, targetEntity = Order.class)
-    private Set<Order> orders = new HashSet<Order>();
+    @OneToMany(mappedBy = "CARTCUSTOMER_ID", cascade = CascadeType.ALL, targetEntity = Cart.class)
+    private Set<Cart> shoppingcarts = new HashSet<Cart>();
 
-    @OneToMany(mappedBy = "CPCUSTOMER_ID", cascade = CascadeType.ALL, targetEntity = CustomerProduct.class)
+    @OneToMany(mappedBy = "CPCUSTOMER_ID", cascade = CascadeType.ALL, targetEntity = CustomerProduct.class, orphanRemoval = true)
     private Set<CustomerProduct> customerreviews = new HashSet<CustomerProduct>();
 
     @OneToMany(mappedBy = "LOGCUSTOMER_ID", cascade = CascadeType.ALL, targetEntity = Log.class)
@@ -110,12 +110,12 @@ public class Customer {
         CUSTOMERMODIFIED_WORKSTATION = cUSTOMERMODIFIED_WORKSTATION;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
+    public Set<Cart> getShoppingcarts() {
+        return shoppingcarts;
     }
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
+    public void setShoppingcarts(Set<Cart> shoppingcarts) {
+        this.shoppingcarts = shoppingcarts;
     }
 
     public Set<CustomerProduct> getCustomerreviews() {

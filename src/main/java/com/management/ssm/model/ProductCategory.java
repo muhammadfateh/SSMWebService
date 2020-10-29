@@ -20,7 +20,11 @@ public class ProductCategory {
     private char PRODUCTCATERGORY_ACTIVE;
 
     @OneToMany(mappedBy = "PRODUCTCATEGORY_ID", cascade = CascadeType.ALL)
-    private Set<Product> products=new HashSet<Product>();
+    private Set<Product> products = new HashSet<Product>();
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "PRODUCTCATEGORYPARENT_ID")
+    private ProductCategory PRODUCTCATEGORYPARENT_ID;
 
     @JsonIgnore
     @Column(name = "PRODUCTCATERGORYMODIFIED_BY")
@@ -81,6 +85,7 @@ public class ProductCategory {
     public void setPRODUCTCATERGORYMODIFIED_WORKSTATION(String PRODUCTCATERGORYMODIFIED_WORKSTATION) {
         this.PRODUCTCATERGORYMODIFIED_WORKSTATION = PRODUCTCATERGORYMODIFIED_WORKSTATION;
     }
+
     @JsonIgnore
     public Set<Product> getProducts() {
         return products;
@@ -88,5 +93,13 @@ public class ProductCategory {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    public ProductCategory getPRODUCTCATEGORYPARENT_ID() {
+        return PRODUCTCATEGORYPARENT_ID;
+    }
+
+    public void setPRODUCTCATEGORYPARENT_ID(ProductCategory PRODUCTCATEGORYPARENT_ID) {
+        this.PRODUCTCATEGORYPARENT_ID = PRODUCTCATEGORYPARENT_ID;
     }
 }

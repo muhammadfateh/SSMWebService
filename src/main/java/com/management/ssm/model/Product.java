@@ -23,15 +23,14 @@ public class Product {
     @Column(name = "PRODUCT_PRICE")
     private double PRODUCT_PRICE;
 
+    @Column(name = "PRODUCTIMAGE_PATH")
+    private String PRODUCTIMAGE_PATH;
+
     @Column(name = "PRODUCT_DESCRIPTION")
     private String PRODUCT_DESCRIPTION;
 
-    @OneToMany(mappedBy = "CPPRODUCT_ID", cascade = CascadeType.ALL, targetEntity = CustomerProduct.class)
-    private Set<CustomerProduct> productreviews = new HashSet<CustomerProduct>();
-
-    @JoinColumn(name = "PRODUCTCATEGORY_ID")
-    @ManyToOne(cascade = {CascadeType.DETACH}, targetEntity = ProductCategory.class)
-    private ProductCategory PRODUCTCATEGORY_ID;
+    @Column(name = "PRODUCTIS_ACTIVE")
+    private char PRODUCTIS_ACTIVE;
 
     @JsonIgnore
     @Column(name = "PRODUCTMODIFIED_BY")
@@ -45,8 +44,15 @@ public class Product {
     @Column(name = "PRODUCTMODIFIED_WORKSTATION")
     private String PRODUCTMODIFIED_WORKSTATION;
 
-    @Column(name = "PRODUCTIS_ACTIVE")
-    private char PRODUCTIS_ACTIVE;
+    //    For reviews given by multiple customers to multiple products.
+    @OneToMany(mappedBy = "CPPRODUCT_ID", cascade = CascadeType.ALL, targetEntity = CustomerProduct.class, orphanRemoval = true)
+    private Set<CustomerProduct> productreviews = new HashSet<CustomerProduct>();
+
+    //    Having ProductCategory
+    @JoinColumn(name = "PRODUCTCATEGORY_ID")
+    @ManyToOne(cascade = {CascadeType.DETACH}, targetEntity = ProductCategory.class)
+    private ProductCategory PRODUCTCATEGORY_ID;
+
 
     public long getPRODUCT_ID() {
         return PRODUCT_ID;
@@ -140,4 +146,11 @@ public class Product {
         this.getProductreviews().remove(review);
     }
 
+    public String getPRODUCTIMAGE_PATH() {
+        return PRODUCTIMAGE_PATH;
+    }
+
+    public void setPRODUCTIMAGE_PATH(String PRODUCTIMAGE_PATH) {
+        this.PRODUCTIMAGE_PATH = PRODUCTIMAGE_PATH;
+    }
 }

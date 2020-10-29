@@ -40,7 +40,7 @@ public class logController {
     @RequestMapping(method = RequestMethod.POST)
     public String insertCustomer(@RequestBody String data) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        Log log= new Log();
+        Log log = new Log();
         JSONObject object = new JSONObject(data);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MMM/dd HH:mm:ss");
         Date date = new Date();
@@ -52,10 +52,11 @@ public class logController {
         logrepository.saveAndFlush(log);
         return mapper.writeValueAsString(log);
     }
-    @RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable long id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        Log log=logrepository.findOne(id);
+        Log log = logrepository.findOne(id);
         customerrepository.delete(id);
         return mapper.writeValueAsString(log);
     }

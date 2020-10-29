@@ -14,9 +14,6 @@ public class OrderStatus {
     @Column(name = "ORDERSTATUS_NAME")
     private String ORDERSTATUS_NAME;
 
-    @OneToMany(mappedBy = "ORDERORDERSTATUS_ID", cascade = CascadeType.ALL)
-    private Set<Order> orders= new HashSet<Order>();
-
     public long getORDERSTATUS_ID() {
         return ORDERSTATUS_ID;
     }
@@ -31,14 +28,6 @@ public class OrderStatus {
 
     public void setORDERSTATUS_NAME(String oRDERSTATUS_NAME) {
         ORDERSTATUS_NAME = oRDERSTATUS_NAME;
-    }
-
-    public Set<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
     }
 
 }
