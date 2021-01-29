@@ -1,0 +1,21 @@
+* {
+    font-family: font-family: 'Trocchi', serif;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:  url(../img/background.jpg) rgb(67, 68, 68);
+}
+
+h1 {
+    font-size: 3.5vw;
+}
+h1,h2 {
+    color: white;
+    text-align: center;
+}
+h3 {
+    visibility: hidden;
+}

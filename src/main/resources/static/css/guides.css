@@ -1,0 +1,357 @@
+/* Webpage content */
+/* Structure: grid */
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+        "padding-top padding-top padding-top"
+        "header header header"
+        "sub-header sub-header sub-header"
+        "padding-left main padding-right"
+        "padding-left padding-bottom padding-right";
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 5% 17% 8% 65% 5%;
+}
+.container > div {
+    //    border: 1px dashed #888;
+}
+
+.padding-top {
+    grid-area: padding-top;
+    visibility: hidden;
+}
+.header {
+    grid-area: header;
+}
+.sub-header {
+    grid-area: sub-header;
+}
+.padding-left {
+    grid-area: padding-left;
+    visibility: hidden;
+}
+.main {
+    grid-area: main;
+    background: white;
+}
+.padding-right {
+    grid-area: padding-right;
+    visibility: hidden;
+}
+.padding-bottom {
+    grid-area: padding-bottom;
+    background: rgba(0,0,0,0.6);
+}
+
+
+.container2 {
+    padding-top: 5%;
+    z-index: 0;
+}
+
+.g1,
+.g2,
+.g3,
+.g4,
+.g5,
+.g6,
+.g7,
+.g8 {
+    margin-top: 5%;
+    margin-left: 6%;
+    float: left;
+    width: 25%;
+    min-width: 60px;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    border-radius: 10%;   
+    border: 1px groove transparent;
+}
+.g7 {
+    margin-left: 21.5%;
+}
+.g8 {
+    margin-left: 6%;
+}
+.g1:hover,
+.g2:hover,
+.g3:hover,
+.g4:hover,
+.g5:hover,
+.g6:hover,
+.g7:hover,
+.g8:hover {
+    background: #4ab48e;
+    transition-duration: 0.5s;
+    border-color: black;
+}
+.g1 img,
+.g2 img,
+.g3 img,
+.g4 img,
+.g5 img,
+.g6 img,
+.g7 img,
+.g8 img {
+    position: relative;
+    width: 50%;
+    min-width: 100px;
+    height: auto;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    padding:1px;
+    border:1px solid orange;
+    display: block;
+    z-index: 2;
+}
+.g1 .g1_text p,
+.g2 .g2_text p,
+.g3 .g3_text p,
+.g4 .g4_text p,
+.g5 .g5_text p,
+.g6 .g6_text p,
+.g7 .g7_text p,
+.g8 .g8_text p {
+    font-size: 150%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.button {
+    background-color: #4ab48e;
+    border: 2px solid black;
+    color: black;
+    padding: 6% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.g1:hover .button,
+.g2:hover .button,
+.g3:hover .button,
+.g4:hover .button,
+.g5:hover .button,
+.g6:hover .button,
+.g7:hover .button,
+.g8:hover .button {
+    background-color: white; 
+    color: black;
+    border: 2px solid black;
+}
+
+
+/* Overlay settings */
+
+
+* {
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    -webkit-transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -o-transform: scale(1.8);
+    transform: scale(1.8);
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.overlay h4 {
+    color: white;
+    font-weight: bold;
+    font-size: 3vw;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    filter: blur(0px);
+}
+.overlay h5 {
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(0px);
+}
+
+.smaller {
+    filter: blur(10px);
+}
+
+.g-infobox-general {
+    z-index: 2;
+    filter: blur(0px);
+    position: absolute;
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 350px;
+    min-height: 200px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: rgba(255,170,0,0.6);
+    visibility: visible;
+    display: none;
+}
+.g1-infobox {
+    top: 70%;
+    left: 35%;
+}
+.g2-infobox {
+    top: 70%;
+    left: 60%;
+}
+.g3-infobox {
+    top: 70%;
+    left: 31.5%;
+}
+.g4-infobox {
+    top: 150%;
+    left: 35%;
+}
+.g5-infobox {
+    top: 150%;
+    left: 60%;
+}
+.g6-infobox {
+    top: 150%;
+    left: 31.5%;
+}
+.g7-infobox {
+    top: 230%;
+    left: 47%;
+}
+.g8-infobox {
+    top: 230%;
+    left: 17%;
+}
+.g1-infobox h1,
+.g2-infobox h1,
+.g3-infobox h1,
+.g4-infobox h1,
+.g5-infobox h1,
+.g6-infobox h1,
+.g7-infobox h1,
+.g8-infobox h1 {
+    font-size: 1.9vw;
+    text-align: left;
+    margin-left: 6%;
+    margin-right: 4%;
+}
+
+
+
+
+/* Media queries */
+
+@media only screen and (max-width: 1050px) {
+    .g1-infobox {
+        top: 70%;
+        left: 35%;
+    }
+    .g2-infobox {
+        top: 70%;
+        left: 57%;
+    }
+    .g3-infobox {
+        top: 70%;
+        left: 29%;
+    }
+    .g4-infobox {
+        top: 130%;
+        left: 35%;
+    }
+    .g5-infobox {
+        top: 130%;
+        left: 57%;
+    }
+    .g6-infobox {
+        top: 130%;
+        left: 29%;
+    }
+    .g7-infobox {
+        top: 192%;
+        left: 47%;
+    }
+    .g8-infobox {
+        top: 200%;
+        left: 17%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .g1-infobox {
+        top: 100%;
+        left: 27%;
+    }
+    .g2-infobox {
+        top: 100%;
+        left: 27%;
+    }
+    .g3-infobox {
+        top: 100%;
+        left: 27%;
+    }
+    .g4-infobox {
+        top: 160%;
+        left: 27%;
+    }
+    .g5-infobox {
+        top: 160%;
+        left: 27%;
+    }
+    .g6-infobox {
+        top: 160%;
+        left: 27%;
+    }
+    .g7-infobox {
+        top: 155%;
+        left: 27%;
+    }
+    .g8-infobox {
+        top: 155%;
+        left: 27%;
+    }
+
+    .g1-infobox h1,
+    .g2-infobox h1,
+    .g3-infobox h1,
+    .g4-infobox h1,
+    .g5-infobox h1,
+    .g6-infobox h1,
+    .g7-infobox h1,
+    .g8-infobox h1
+    {
+        font-size: 2.4vh;
+    }
+}

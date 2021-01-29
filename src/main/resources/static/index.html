@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+    </head>
+
+
+    <body>
+        <!-- ============================== Navigation bar ============================== -->
+        <section class="nav-bar">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="index.html"><img src="img/logo.png"></a>
+                </div>
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li> 
+                            <a href="index.html"> Start </a>
+                        </li>
+                        <li> 
+                            <a href="Training.html"> Training </a>
+                        </li>
+                        <li> 
+                            <a href="Nutrition.html"> Nutrition </a>
+                        </li>
+                        <li> 
+                            <a href="Mobility.html"> Mobility </a>
+                        </li>
+                        <li> 
+                            <a href="contact.html"> Kontakt </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <script type="text/javascript">
+            (function($) { 
+                $(function() { 
+                    $('nav ul li a:not(:only-child)').click(function(e) {
+                        $(this).siblings('.nav-dropdown').toggle();
+                        $('.dropdown').not($(this).siblings()).hide();
+                        e.stopPropagation();
+                    });
+                    $('html').click(function() {
+                        $('.nav-dropdown').hide();
+                    });
+                    $('#nav-toggle').click(function() {
+                        $('nav ul').slideToggle();
+                    });
+                    $('#nav-toggle').on('click', function() {
+                        this.classList.toggle('active');
+                    });
+                }); 
+            })(jQuery);
+        </script>
+        <!-- ============================== Navigation bar ============================== -->
+        
+        <div class="head-image">
+            <img src="img/photo_gallary/lapland_home_image.jpg">
+        </div>
+    </body>
+
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Guides</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
+        <link rel="stylesheet" type="text/css" href="css/guides.css">
+
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var elts = $('*[class*="g"]')
+                .filter(function () {
+                    return this.className.match(/(?:^|\s)g/);
+                });
+
+                let guideClicked = "gX";
+
+                $(".g1 button").click(function() {
+                    guideClicked = "g1";
+                    $(".g1-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g1").toggleClass("smaller");
+                    var div_g1_infobox = $(".g1-infobox");
+                    div_g1_infobox.css("visibility", "visible");
+                    div_g1_infobox.show(0);
+                    div_g1_infobox.animate({ height: "25vw" }, "slow");
+                    div_g1_infobox.animate({ width: "35%" }, "slow");
+                    $(".g1-infobox h1").delay(1250).show(0);    
+                });
+                $(".g2 button").click(function() {
+                    guideClicked = "g2";
+                    $(".g2-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g2").toggleClass("smaller");
+                    var div_g2_infobox = $(".g2-infobox");
+                    div_g2_infobox.css("visibility", "visible");
+                    div_g2_infobox.show(0);
+                    div_g2_infobox.animate({ height: "25vw" }, "slow");
+                    div_g2_infobox.animate({ width: "35%" }, "slow");
+                    $(".g2-infobox h1").delay(1250).show(0);    
+                });
+                $(".g3 button").click(function() {
+                    guideClicked = "g3";
+                    $(".g3-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g3").toggleClass("smaller");
+                    var div_g3_infobox = $(".g3-infobox");
+                    div_g3_infobox.css("visibility", "visible");
+                    div_g3_infobox.show(0);
+                    div_g3_infobox.animate({ height: "25vw" }, "slow");
+                    div_g3_infobox.animate({ width: "35%" }, "slow");
+                    $(".g3-infobox h1").delay(1250).show(0);    
+                });
+                $(".g4 button").click(function() {
+                    guideClicked = "g4";
+                    $(".g4-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g4").toggleClass("smaller");
+                    var div_g4_infobox = $(".g4-infobox");
+                    div_g4_infobox.css("visibility", "visible");
+                    div_g4_infobox.show(0);
+                    div_g4_infobox.animate({ height: "25vw" }, "slow");
+                    div_g4_infobox.animate({ width: "35%" }, "slow");
+                    $(".g4-infobox h1").delay(1250).show(0);    
+                });
+                $(".g5 button").click(function() {
+                    guideClicked = "g5";
+                    $(".g5-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g5").toggleClass("smaller");
+                    var div_g5_infobox = $(".g5-infobox");
+                    div_g5_infobox.css("visibility", "visible");
+                    div_g5_infobox.show(0);
+                    div_g5_infobox.animate({ height: "25vw" }, "slow");
+                    div_g5_infobox.animate({ width: "35%" }, "slow");
+                    $(".g5-infobox h1").delay(1250).show(0);    
+                });
+                $(".g6 button").click(function() {
+                    guideClicked = "g6";
+                    $(".g6-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g6").toggleClass("smaller");
+                    var div_g6_infobox = $(".g6-infobox");
+                    div_g6_infobox.css("visibility", "visible");
+                    div_g6_infobox.show(0);
+                    div_g6_infobox.animate({ height: "25vw" }, "slow");
+                    div_g6_infobox.animate({ width: "35%" }, "slow");
+                    $(".g6-infobox h1").delay(1250).show(0);    
+                });
+                $(".g7 button").click(function() {
+                    guideClicked = "g7";
+                    $(".g7-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g7").toggleClass("smaller");
+                    var div_g7_infobox = $(".g7-infobox");
+                    div_g7_infobox.css("visibility", "visible");
+                    div_g7_infobox.show(0);
+                    div_g7_infobox.animate({ height: "25vw" }, "slow");
+                    div_g7_infobox.animate({ width: "35%" }, "slow");
+                    $(".g7-infobox h1").delay(1250).show(0);    
+                });
+                $(".g8 button").click(function() {
+                    guideClicked = "g8";
+                    $(".g8-infobox h1").hide(0);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not(".g8").toggleClass("smaller");
+                    var div_g8_infobox = $(".g8-infobox");
+                    div_g8_infobox.css("visibility", "visible");
+                    div_g8_infobox.show(0);
+                    div_g8_infobox.animate({ height: "25vw" }, "slow");
+                    div_g8_infobox.animate({ width: "35%" }, "slow");
+                    $(".g8-infobox h1").delay(1250).show(0);    
+                });
+
+                $(".overlay").click(function() {
+                    var div_infobox = $("."+guideClicked+"-infobox");
+                    $("."+guideClicked+"-infobox h1").hide(500);
+                    div_infobox.animate({ height: "10%" }, "normal");
+                    div_infobox.animate({ width: "1%" }, "normal");
+                    div_infobox.hide(200);
+                    $(".overlay").toggleClass("active");
+                    $(elts).not("."+guideClicked).toggleClass("smaller");
+                });
+            });
+        </script>
+    </head>
+
+
+    <body>
+        <!-- ============================== Navigation bar ============================== -->
+        <section class="nav-bar">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="index.html"><img src="img/logo.png"></a>
+                </div>
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li> 
+                            <a href="index.html"> Start </a>
+                        </li>
+                        <li> 
+                            <a href="Training.html"> Training </a>
+                        </li>
+                        <li> 
+                            <a href="Nutrition.html"> Nutrition </a>
+                        </li>
+                        <li> 
+                            <a href="Mobility.html"> Mobility </a>
+                        </li>
+                        <li> 
+                            <a href="contact.html"> Kontakt </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <script type="text/javascript">
+            (function($) { 
+                $(function() { 
+                    $('nav ul li a:not(:only-child)').click(function(e) {
+                        $(this).siblings('.nav-dropdown').toggle();
+                        $('.dropdown').not($(this).siblings()).hide();
+                        e.stopPropagation();
+                    });
+                    $('html').click(function() {
+                        $('.nav-dropdown').hide();
+                    });
+                    $('#nav-toggle').click(function() {
+                        $('nav ul').slideToggle();
+                    });
+                    $('#nav-toggle').on('click', function() {
+                        this.classList.toggle('active');
+                    });
+                }); 
+            })(jQuery);
+        </script>
+        <!-- ============================== Navigation bar ============================== -->
+
+        <div class="container">
+            <div class="padding-top">padding-top</div>
+            <div class="header">
+                <h1>Guide profiles</h1>
+            </div>
+            <div class="sub-header">
+                <h2>Get to know our tour guides!</h2>
+                <h2>________________________________</h2>
+                <h3>hidden-text</h3>
+            </div>
+            <div class="padding-left">padding-left</div>
+            <div class="overlay">
+            </div>
+            <div class="main">
+                <div class="container2">
+                    <div class="g1"><img src="img/people/randall_hudson.jpg">
+                        <div class="g1_text">
+                            <p>Randall Hudson</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g1-infobox">
+                        <h1>Full name: Randall Hudson</h1>
+                        <h1>Guide number: #1</h1>
+                        <h1>E-Mail address: randall.hudson@guide.com</h1>
+                        <h1>Phone number: (507)-620-8952</h1>
+                        <h1>Languages: Finnish, Swedish, English</h1>
+                        <h1>Special skills: Art, Fishing, Lip reading</h1>
+                    </div>
+                    <div class="g2"><img src="img/people/leslie_turner.jpg">
+                        <div class="g2_text">
+                            <p>Leslie Turner</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g2-infobox">
+                        <h1>Full name: Leslie Turner</h1>
+                        <h1>Guide number: #2</h1>
+                        <h1>E-Mail address: leslie.turner@guide.com</h1>
+                        <h1>Phone number: (376)-687-0557</h1>
+                        <h1>Languages: Finnish, Russian</h1>
+                        <h1>Special skills: Swimming, Map-making, Voice impressions</h1>
+                    </div>
+                    <div class="g3"><img src="img/people/kenzi_mckinney.jpg">
+                        <div class="g3_text">
+                            <p>Kenzi McKinney</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g3-infobox">
+                        <h1>Full name: Kenzi McKinney</h1>
+                        <h1>Guide number: #3</h1>
+                        <h1>E-Mail address: kenzi.mckinney@guide.com</h1>
+                        <h1>Phone number: (274)-552-4761</h1>
+                        <h1>Languages: Finnish, English</h1>
+                        <h1>Special skills: Playing the piano, Gymnastics</h1>
+                    </div>
+                    <div class="g4"><img src="img/people/luis_brown.jpg">
+                        <div class="g4_text">
+                            <p>Luis Brown</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g4-infobox">
+                        <h1>Full name: Luis Brown</h1>
+                        <h1>Guide number: #4</h1>
+                        <h1>E-Mail address: luis.brown@guide.com</h1>
+                        <h1>Phone number: (061)-844-6522</h1>
+                        <h1>Languages: English, Finnish</h1>
+                        <h1>Special skills: Mathmatics, Gardening, Calligraphy</h1>
+                    </div>
+                    <div class="g5"><img src="img/people/charles_harris.jpg">
+                        <div class="g5_text">
+                            <p>Charles Harris</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g5-infobox">
+                        <h1>Full name: Charles Harris</h1>
+                        <h1>Guide number: #5</h1>
+                        <h1>E-Mail address: charles.harris@guide.com</h1>
+                        <h1>Phone number: (549)-026-9169</h1>
+                        <h1>Languages: English</h1>
+                        <h1>Special skills: Identifying plants, Singing</h1>
+                    </div>
+                    <div class="g6"><img src="img/people/leta_franklin.jpg">
+                        <div class="g6_text">
+                            <p>Leta Franklin</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g6-infobox">
+                        <h1>Full name: Leta Franklin</h1>
+                        <h1>Guide number: #6</h1>
+                        <h1>E-Mail address: leta.franklin@guide.com</h1>
+                        <h1>Phone number: (347)-860-8871</h1>
+                        <h1>Languages: Finnish, English, Danish</h1>
+                        <h1>Special skills: Playing the flute, Tracking</h1>
+                    </div>
+                    <div class="g7"><img src="img/people/gene_beck.jpg">
+                        <div class="g7_text">
+                            <p>Gene Beck</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g7-infobox">
+                        <h1>Full name: Gene Beck</h1>
+                        <h1>Guide number: #7</h1>
+                        <h1>E-Mail address: gene.beck@guide.com</h1>
+                        <h1>Phone number: (100)-938-8981</h1>
+                        <h1>Languages: English, Mandarin Chinese, Finnish, Russian</h1>
+                        <h1>Special skills: Languages, Lip reading, Swordsmanship</h1>
+                    </div>
+                    <div class="g8"><img src="img/people/bella_shaw.jpg">
+                        <div class="g8_text">
+                            <p>Bella Shaw</p>
+                            <p>Tour guide</p>
+                            <button class="button">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="g-infobox-general g8-infobox">
+                        <h1>Full name: Bella Shaw</h1>
+                        <h1>Guide number: #8</h1>
+                        <h1>E-Mail address: bella.shaw@guide.com</h1>
+                        <h1>Phone number: (780)-845-4935</h1>
+                        <h1>Languages: German, English, Swedish</h1>
+                        <h1>Special skills: Horseback riding, Photography</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-right">padding-right</div>
+            <div class="padding-bottom">
+                <h3>hidden-text</h3>
+                <h3>hidden-text</h3>
+                <h3>hidden-text</h3>
+            </div>
+        </div>
+    </body>
+
+
+</html>

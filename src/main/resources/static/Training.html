@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Lapland</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
+        <link rel="stylesheet" type="text/css" href="css/modal-image.css">
+        <link rel="stylesheet" type="text/css" href="css/lapland.css">
+
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+    </head>
+
+
+    <body>
+        <!-- ============================== Navigation bar ============================== -->
+        <section class="nav-bar">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="index.html"><img src="img/logo.png"></a>
+                </div>
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li> 
+                            <a href="index.html"> Start </a>
+                        </li>
+                        <li> 
+                            <a href="Training.html"> Training </a>
+                        </li>
+                        <li> 
+                            <a href="Nutrition.html"> Nutrition </a>
+                        </li>
+                        <li> 
+                            <a href="Mobility.html"> Mobility </a>
+                        </li>
+                        <li> 
+                            <a href="contact.html"> Kontakt </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <script type="text/javascript">
+            (function($) { 
+                $(function() { 
+                    $('nav ul li a:not(:only-child)').click(function(e) {
+                        $(this).siblings('.nav-dropdown').toggle();
+                        $('.dropdown').not($(this).siblings()).hide();
+                        e.stopPropagation();
+                    });
+                    $('html').click(function() {
+                        $('.nav-dropdown').hide();
+                    });
+                    $('#nav-toggle').click(function() {
+                        $('nav ul').slideToggle();
+                    });
+                    $('#nav-toggle').on('click', function() {
+                        this.classList.toggle('active');
+                    });
+                }); 
+            })(jQuery);
+        </script>
+        <!-- ============================== Navigation bar ============================== -->
+
+        <div class="container">
+            <div class="padding-left">padding-left</div>
+            <div class="padding-top">padding-top</div>
+            <div class="padding-right">padding-right</div>
+            <div class="header">
+                <h1>Willkommen auf meinem persönlichen Fitness-Blog!</h1>
+            </div>
+            <div class="sub-header">
+                <h1>Kontaktiere mich gerne für ein persönliches Gespräch, klicke dafür im Menü auf "Kontakt"</h1>
+                <h2>_____________________________________________________________________________________</h2>
+                <h3>hidden-text</h3>
+            </div>
+            <div class="main-first-section">
+                <div class="head-image">
+                    <img src="img/photo_gallary/lapland_head-image.jpg">
+                </div>
+                <h3>hidden-text</h3>
+                <p class="main-section-header">Einer der gesündesten Entscheidungen</p>
+                <p class="main-section-text">Hey Leute, ich bin froh, dass Ihr den Weg zu meinem Blog gefunden habt! Ich möchte mich hier allen Aspekten rund um die Themen Abnehmen und Fitness widmen und euch mit wichtigen Infos, leckeren Rezepten und einigen „Geheimtipps“ versorgen.p>
+                <p class="main-section-text">Da ich selbst absolut Sport- und Fitnessbegeistert bin und mich auch schon seit mehreren Jahren mit dem Thema Ernährung auseinander gesetzt habe, würde ich meine gesammelten Kenntnisse und Erfahrungen nun gerne mit anderen Teilen. Heutzutage wird ein gesunder Lebensstil und das generelle Körperbewusstsein ja immer wichtiger. Allerdings wird das Bild oft von großen Konzernen und deren kommerziellen Interessen verfälscht</p>
+                <p class="main-section-text">Nichts desto trotz möchte ich dir einige Grundlagen bzw. Basics mit auf dem Weg geben. Ich weiß selber nur zu gut, das im heutigen World-Wide-Web viele verschiedene Trainings- und Ernährungskonzepte empfohlen werden. Doch bevor man sich für ein Konzept entscheidet, ist es wichtig die Basics zu erlernen.</p>
+                <h3>hidden-text</h3>
+            </div>
+            <div class="main-second-section">
+
+                <!-- ========== Image grid layout ========== -->
+                <section id="photos"></section>
+
+                <script type="text/javascript">
+                    var allImages = "";
+
+                    for(var i=1; i<=16; i++) {
+                        $('#photos').append("<img id='lapland_"+i+"' src='img/photo_gallary/lapland_"+i+".jpg' alt='Lapland "+i+"'>");
+                    }
+                </script>
+                <!-- ========== Image grid layout ========== -->
+
+                <!-- =============== Modal for images =============== -->
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div> 
+
+                <script type="text/javascript">
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the image and insert it inside the modal - use its "alt" text as a caption
+                    let img1 = document.getElementById("lapland_1");
+                    let img2 = document.getElementById("lapland_2");
+                    let img3 = document.getElementById("lapland_3");
+                    let img4 = document.getElementById("lapland_4");
+                    let img5 = document.getElementById("lapland_5");
+                    let img6 = document.getElementById("lapland_6");
+                    let img7 = document.getElementById("lapland_7");
+                    let img8 = document.getElementById("lapland_8");
+                    let img9 = document.getElementById("lapland_9");
+                    let img10 = document.getElementById("lapland_10");
+                    let img11 = document.getElementById("lapland_11");
+                    let img12 = document.getElementById("lapland_12");
+                    let img13 = document.getElementById("lapland_13");
+                    let img14 = document.getElementById("lapland_14");
+                    let img15 = document.getElementById("lapland_15");
+                    let img16 = document.getElementById("lapland_16");
+
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img1.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img2.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img3.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img4.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img5.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img6.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img7.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img8.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img9.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img10.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img11.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img12.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img13.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img14.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img15.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    img16.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    } 
+                </script>
+                <!-- =============== Modal for images =============== -->
+
+            </div>
+            <div class="padding-bottom">
+                <h3>hidden-text</h3>
+                <h3>hidden-text</h3>
+                <h3>hidden-text</h3>
+            </div>
+        </div>
+    </body>
+
+
+</html>

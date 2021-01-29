@@ -1,0 +1,137 @@
+
+/* Modal for images */
+
+
+/* Style the Image Used to Trigger the Modal */
+#lapland_1,
+#lapland_2,
+#lapland_3,
+#lapland_4,
+#lapland_5,
+#lapland_6,
+#lapland_7,
+#lapland_8,
+#lapland_9,
+#lapland_10,
+#lapland_11,
+#lapland_12,
+#lapland_13,
+#lapland_14,
+#lapland_15,
+#lapland_16,
+#aurora_1,
+#aurora_2,
+#aurora_3,
+#aurora_4,
+#aurora_5,
+#aurora_6,
+#aurora_7,
+#aurora_8,
+#aurora_9,
+#aurora_10 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#lapland_1:hover,
+#lapland_2:hover,
+#lapland_3:hover,
+#lapland_4:hover,
+#lapland_5:hover,
+#lapland_6:hover,
+#lapland_7:hover,
+#lapland_8:hover,
+#lapland_9:hover,
+#lapland_10:hover,
+#lapland_11:hover,
+#lapland_12:hover,
+#lapland_13:hover,
+#lapland_14:hover,
+#lapland_15:hover,
+#lapland_16:hover,
+#aurora_1:hover,
+#aurora_2:hover,
+#aurora_3:hover,
+#aurora_4:hover,
+#aurora_5:hover,
+#aurora_6:hover,
+#aurora_7:hover,
+#aurora_8:hover,
+#aurora_9:hover,
+#aurora_10:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 90%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Media queries */
+
+
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+} 

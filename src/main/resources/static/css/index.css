@@ -1,0 +1,23 @@
+.head-image {
+    margin-top: 2%;
+}
+.head-image img {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 60%;
+    border-style: solid;
+    border-color: white;
+    border-radius: 2%;
+}
+
+
+
+
+/* Media queries */
+
+@media only screen and (max-width: 900px) {
+    .head-image img {
+        width: 90%;
+    }
+}
