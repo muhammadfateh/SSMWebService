@@ -2,109 +2,166 @@
 <html>
 
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Contact</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
-        <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <title>Contact</title>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
 
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
-    </head>
+    <!-- JS -->
+    <script src="js/jquery/jquery-latest.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+</head>
 
 
-    <body>
-        <!-- ============================== Navigation bar ============================== -->
-        <section class="nav-bar">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="index.html"><img src="img/logo.png"></a>
-                </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li> 
-                            <a href="index.html"> Start </a>
+<body>
+    <!-- ============================== Navigation bar ============================== -->
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-0 navbar-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="img/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-uppercase font-weight-bold">Start</a>
                         </li>
-                        <li> 
-                            <a href="Training.html"> Training </a>
+                        <li class="nav-item">
+                            <a href="Training.html" class="nav-link text-uppercase font-weight-bold">Training</a>
                         </li>
-                        <li> 
-                            <a href="Nutrition.html"> Nutrition </a>
+                        <li class="nav-item">
+                            <a href="Nutrition.html" class="nav-link text-uppercase font-weight-bold">Nutrition</a>
                         </li>
-                        <li> 
-                            <a href="Mobility.html"> Mobility </a>
+                        <li class="nav-item">
+                            <a href="Mobility.html" class="nav-link text-uppercase font-weight-bold">Mobility</a>
                         </li>
-                        <li> 
-                            <a href="contact.html"> Kontakt </a>
+                        <li class="nav-item active">
+                            <a href="contact.html" class="nav-link text-uppercase font-weight-bold">Kontakt
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
                     </ul>
-                </nav>
-            </div>
-        </section>
-        <script type="text/javascript">
-            (function($) { 
-                $(function() { 
-                    $('nav ul li a:not(:only-child)').click(function(e) {
-                        $(this).siblings('.nav-dropdown').toggle();
-                        $('.dropdown').not($(this).siblings()).hide();
-                        e.stopPropagation();
-                    });
-                    $('html').click(function() {
-                        $('.nav-dropdown').hide();
-                    });
-                    $('#nav-toggle').click(function() {
-                        $('nav ul').slideToggle();
-                    });
-                    $('#nav-toggle').on('click', function() {
-                        this.classList.toggle('active');
-                    });
-                }); 
-            })(jQuery);
-        </script>
-        <!-- ============================== Navigation bar ============================== -->
-
-        <div class="container">
-            <div class="padding-top">
-                <h1 style="font-size: 1vw">padding-top</h1>
-            </div>
-            <div class="padding-left">padding-left</div>
-            <div class="header">
-                <h1 style="font-size: 3vw">We are here to help! Contact us!</h1>
-            </div>
-            <div class="padding-right">pad-right</div>
-            <div class="sub-header">
-                <h2>________________________________</h2>
-                <h3>hidden-text</h3>
-                <h3>hidden-text</h3>
-            </div>
-            <div class="map">
-                <div>
-                    <div class="google-maps">
-                        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lapin%20ammattikorkeakoulu&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="ml-auto login-btn">
+                        <button class="btn btn-outline-secondary" id="btn-login" data-toggle="modal" data-target="#loginModal">Login</button>
+                        <button class="btn card-link text-light d-none" id="btn-download-excel">Workout Plan</button>
                     </div>
                 </div>
             </div>
-            <div class="address">
-                <img src="img/logo.png">
-                <p>Jokiväylä 11 C, 96300 Rovaniemi, Finland</p>
-                <p>kirjaamo@lapinamk.fi</p>
-                <p>+358 20 798 6000</p>
-                <h2 style="color: black; font-weight: 600">________________</h2>
-                <h3>hidden-text</h3>
-                <p>Customer Service:</p>
-                <img class="customer-service-img" src="img/people/anna_fitzgerald.jpg">
-                <div class="p-position">
-                    <p style="margin-left: 50%; text-align: justify">Anna Fitzgerald</p>
-                    <p style="margin-left: 50%; text-align: justify">CS Assistent</p>
-                    <p style="margin-left: 50%; text-align: justify">anna.fitzgerald@help.com
-                    </p>
+        </nav>
+    </header>
+    <!-- ============================== Page Content ============================== -->
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="text-light">We are here to help! Contact us!</h1>
+                    <a class="lead mt-4" id="scroll-to-content" href="#main-content"><i class="arrow down mt-4"></i></a>
                 </div>
             </div>
         </div>
-    </body>
+    </header>
+
+    <!-- Page Content -->
+    <section class="py-5" id="main-content">
+        <div class="container">
+            <h2 class="font-weight-light text-center text-light">Let's Get In Touch</h2>
+            <hr class="my-4 mx-4 text-light bg-light" />
+
+            <div class="row align-items-center bg-light">
+
+                <div class="col-md-6 text-center my-4">
+                    <iframe style="width: 100%;" height="600" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=Lapin%20ammattikorkeakoulu&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                </div>
+
+                <div class="col-md-6 my-4 text-center">
+                    <img src="img/logo.png" style="width: 50%;">
+                    <p>Jokiväylä 11 C, 96300 Rovaniemi, Finland</p>
+                    <p>kirjaamo@lapinamk.fi</p>
+                    <p>+358 20 798 6000</p>
+                    <hr class="my-4 mr-4 text-light bg-dark" />
+                    <div class="text-left">
+                        <h3>Customer Service:</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-auto text-left my-4">
+                                <img class="rounded-circle" src="img/people/anna_fitzgerald.jpg">
+                            </div>
+
+                            <div class="col-md-auto my-4 text-left">
+                                <p>Anna Fitzgerald</p>
+                                <p>CS Assistent</p>
+                                <p>anna.fitzgerald@help.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            <div class="container my-4">
+                <!-- Photo Grid -->
+                <div class="row photos-rows" id="photos-col"></div>
+            </div>
+    </section>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5><a class="close" type="button"
+                                                                              data-dismiss="modal" aria-label="Close">×</a>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" class="d-block" method="POST">
+                        <div class="form-group"><label for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
+                        </div>
+                        <div class="form-group"><label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox"/> Remember me</label><a
+                                class="card-link text-dark float-right" href="#">Forgot Password?</a></div>
+                    </form>
+                    <form id="regForm" class="d-none" method="post">
+                        <div class="form-group"><label for="firstName">First Name</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
+                        </div>
+                        <div class="form-group"><label for="lastName">Last Name</label>
+                            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group"><label for="regUsername">Username</label>
+                            <input class="form-control" type="text" id="regUsername" name="regUsername" placeholder="Enter Username" />
+                        </div>
+                        <div class="form-group"><label for="regPassword">Password</label>
+                            <input class="form-control" type="password" id="regPassword" name="regPassword" placeholder="Enter Password" />
+                        </div>
+                        <div class="form-group"><label for="confirmPassword">Confirm Password</label>
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="card-link text-dark mr-auto" type="button" id="hide-button" onclick="showRegistrationForm();">Register</a>
+                    <a class="btn btn-dark" type="button" data-dismiss="modal"> Close</a>
+                    <a class="btn btn-primary standard-bg" type="button" onclick="authenticate()">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 
 </html>

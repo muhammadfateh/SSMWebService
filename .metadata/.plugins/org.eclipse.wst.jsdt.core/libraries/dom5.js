@@ -162,7 +162,7 @@ Storage.prototype.getItem = function (key) {
  * function setItem(key,value)
  * http://www.w3.org/TR/2011/CR-webstorage-20111208
  * @param {String} key
- * @param {String} value
+ * @param {boolean} value
  * @memberOf Storage
  */
 Storage.prototype.setItem = function (key, value) {

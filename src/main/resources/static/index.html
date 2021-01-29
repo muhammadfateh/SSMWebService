@@ -2,74 +2,116 @@
 <html>
 
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- CSS Styling -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
-    </head>
+    <!-- JS -->
+    <script src="js/jquery/jquery-latest.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <title>Home</title>
 
+</head>
 
-    <body>
-        <!-- ============================== Navigation bar ============================== -->
-        <section class="nav-bar">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="index.html"><img src="img/logo.png"></a>
+<body>
+<!-- ============================== Navigation bar ============================== -->
+
+<header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top py-0 navbar-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img src="img/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link text-uppercase font-weight-bold">Start
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Training.html" class="nav-link text-uppercase font-weight-bold">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Nutrition.html" class="nav-link text-uppercase font-weight-bold">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Mobility.html" class="nav-link text-uppercase font-weight-bold">Mobility</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link text-uppercase font-weight-bold">Kontakt</a>
+                    </li>
+                </ul>
+                <div class="ml-auto login-btn">
+                    <button class="btn btn-outline-secondary" id="btn-login" data-toggle="modal" data-target="#loginModal">Login</button>
+                    <button class="btn card-link text-light d-none" id="btn-download-excel">Workout Plan</button>
                 </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li> 
-                            <a href="index.html"> Start </a>
-                        </li>
-                        <li> 
-                            <a href="Training.html"> Training </a>
-                        </li>
-                        <li> 
-                            <a href="Nutrition.html"> Nutrition </a>
-                        </li>
-                        <li> 
-                            <a href="Mobility.html"> Mobility </a>
-                        </li>
-                        <li> 
-                            <a href="contact.html"> Kontakt </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
-        </section>
-        <script type="text/javascript">
-            (function($) { 
-                $(function() { 
-                    $('nav ul li a:not(:only-child)').click(function(e) {
-                        $(this).siblings('.nav-dropdown').toggle();
-                        $('.dropdown').not($(this).siblings()).hide();
-                        e.stopPropagation();
-                    });
-                    $('html').click(function() {
-                        $('.nav-dropdown').hide();
-                    });
-                    $('#nav-toggle').click(function() {
-                        $('nav ul').slideToggle();
-                    });
-                    $('#nav-toggle').on('click', function() {
-                        this.classList.toggle('active');
-                    });
-                }); 
-            })(jQuery);
-        </script>
-        <!-- ============================== Navigation bar ============================== -->
-        
-        <div class="head-image">
-            <img src="img/photo_gallary/lapland_home_image.jpg">
         </div>
-    </body>
+    </nav>
+</header>
+<!-- ============================== Header Image ============================== -->
+
+<div class="head-image">
+    <img src="img/photo_gallary/index/main-page-header.jpg">
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5><a class="close" type="button"
+                                                                          data-dismiss="modal" aria-label="Close">×</a>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="d-block" method="POST">
+                    <div class="form-group"><label for="username">Username</label>
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
+                    </div>
+                    <div class="form-group"><label for="password">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
+                    </div>
+                    <div class="checkbox"><label><input type="checkbox"/> Remember me</label><a
+                            class="card-link text-dark float-right" href="#">Forgot Password?</a></div>
+                </form>
+                <form id="regForm" class="d-none" method="post">
+                    <div class="form-group"><label for="firstName">First Name</label>
+                        <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
+                    </div>
+                    <div class="form-group"><label for="lastName">Last Name</label>
+                        <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
+                    </div>
+                    <div class="form-group"><label for="regUsername">Username</label>
+                        <input class="form-control" type="text" id="regUsername" name="regUsername" placeholder="Enter Username" />
+                    </div>
+                    <div class="form-group"><label for="regPassword">Password</label>
+                        <input class="form-control" type="password" id="regPassword" name="regPassword" placeholder="Enter Password" />
+                    </div>
+                    <div class="form-group"><label for="confirmPassword">Confirm Password</label>
+                        <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a class="card-link text-dark mr-auto" type="button" id="hide-button" onclick="showRegistrationForm();">Register</a>
+                <a class="btn btn-dark" type="button" data-dismiss="modal"> Close</a>
+                <a class="btn btn-primary standard-bg" type="button" onclick="authenticate()">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
 
 </html>

@@ -2,206 +2,191 @@
 <html>
 
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Auroras</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/navigationBar.css">
-        <link rel="stylesheet" type="text/css" href="css/modal-image.css">
-        <link rel="stylesheet" type="text/css" href="css/auroras.css">
+    <title>Nutrition</title>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
 
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
-    </head>
+    <!-- JS -->
+    <script src="js/jquery/jquery-latest.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/nutrition.js"></script>
+</head>
 
 
-    <body>
-        <!-- ============================== Navigation bar ============================== -->
-        <section class="nav-bar">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="index.html"><img src="img/logo.png"></a>
-                </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li> 
-                            <a href="index.html"> Start </a>
+<body>
+    <!-- ============================== Navigation bar ============================== -->
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-0 navbar-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="img/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-uppercase font-weight-bold">Start</a>
                         </li>
-                        <li> 
-                            <a href="Training.html"> Training </a>
+                        <li class="nav-item">
+                            <a href="Training.html" class="nav-link text-uppercase font-weight-bold">Training</a>
                         </li>
-                        <li> 
-                            <a href="Nutrition.html"> Nutrition </a>
+                        <li class="nav-item active">
+                            <a href="Nutrition.html" class="nav-link text-uppercase font-weight-bold">Nutrition
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
-                        <li> 
-                            <a href="Mobility.html"> Mobility </a>
+                        <li class="nav-item">
+                            <a href="Mobility.html" class="nav-link text-uppercase font-weight-bold">Mobility</a>
                         </li>
-                        <li> 
-                            <a href="contact.html"> Kontakt </a>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link text-uppercase font-weight-bold">Kontakt</a>
                         </li>
                     </ul>
-                </nav>
+                    <div class="ml-auto login-btn">
+                        <button class="btn btn-outline-secondary" id="btn-login" data-toggle="modal" data-target="#loginModal">Login</button>
+                        <button class="btn card-link text-light d-none" id="btn-download-excel">Workout Plan</button>
+                    </div>
+                </div>
             </div>
-        </section>
-        <script type="text/javascript">
-            (function($) { 
-                $(function() { 
-                    $('nav ul li a:not(:only-child)').click(function(e) {
-                        $(this).siblings('.nav-dropdown').toggle();
-                        $('.dropdown').not($(this).siblings()).hide();
-                        e.stopPropagation();
-                    });
-                    $('html').click(function() {
-                        $('.nav-dropdown').hide();
-                    });
-                    $('#nav-toggle').click(function() {
-                        $('nav ul').slideToggle();
-                    });
-                    $('#nav-toggle').on('click', function() {
-                        this.classList.toggle('active');
-                    });
-                }); 
-            })(jQuery);
-        </script>
-        <!-- ============================== Navigation bar ============================== -->
-
-        <div class="container">
-            <div class="padding-left">padding-left</div>
-            <div class="padding-top">padding-top</div>
-            <div class="padding-right">padding-right</div>
-            <div class="header">
-                <h1>Nutrition</h1>
-            </div>
-            <div class="sub-header">
-                <h1>Entdecke die vielfalt gesunder Mahlzeiten</h1>
-                <h2>________________________________</h2>
-                <h3>hidden-text</h3>
-            </div>
-            <div class="main-first-section">
-                <p class="main-section-header">What is an aurora?</p>
-                <p class="main-section-text">An aurora is a natural phenomenon which is characterised by a display of a natural-coloured (green, red, yellow or white) light in the sky. It is a light show which is caused when electrically-charged particles from the sun collide with particles from gases such as oxygen and nitrogen present in the Earth’s atmosphere.</p>
-
-                <p class="main-section-header">Description</p>
-                <p class="main-section-text">Aurora is sometimes referred to as ‘polar light’. It is predominantly seen in the regions of high altitudes like the Arctic and Antarctic. An aurora is caused by the streams of electrified particles (which are emitted by the sun) trapped in the magnetic field of the earth. It is produced when this magnetosphere is disturbed by the solar wind carrying the charged particles. Auroras are seen in latitudes of around 70 degrees. They generally occur in a band known as ‘auroral zone’. The auroral zone is 3 to 6 degrees wide in latitude. It lies between 10 and 20 degrees from the geomagnetic poles. This is visible quite clearly during the night. Auroras can sometimes be seen at latitudes below the actual auroral zone.</p>
-                <p class="main-section-text">Auroras can appear in various forms like streamers, patches, arcs, scattered light, diffused light etc. The brightest and the most distinctive of all forms of auroras are the ones which are curtain-like in the shape of an arc, extending in the east-west direction. This natural light effect is known as ‘aurora borealis’ in northern altitudes, while the effect in the southern latitudes is known as ‘aurora australis’. (Auroras that occur in Northern hemisphere are known as aurora borealis and auroras that take place in Southern hemisphere are known as aurora australis.) Aurora borealis is also known as ‘Northern lights’. Similarly, aurora australis is also known as ‘Southern lights’.</p>
-            </div>
-            <div class="main-second-section">
-                <main class="grid">
-                    <img id="aurora_1" class="aurora_1" src="img/photo_gallary/aurora_1.jpg" alt="Aurora 1">
-                    <img id="aurora_2" class="aurora_2" src="img/photo_gallary/aurora_2.jpg" alt="Aurora 2">
-                    <img id="aurora_3" class="aurora_3" src="img/photo_gallary/aurora_3.jpg" alt="Aurora 3">
-                    <img id="aurora_4" class="aurora_4" src="img/photo_gallary/aurora_4.jpg" alt="Aurora 4">
-                    <img id="aurora_5" class="aurora_5" src="img/photo_gallary/aurora_5.jpg" alt="Aurora 5">
-                    <img id="aurora_6" class="aurora_6" src="img/photo_gallary/aurora_6.jpg" alt="Aurora 6">
-                    <img id="aurora_7" class="aurora_7" src="img/photo_gallary/aurora_7.jpg" alt="Aurora 7">
-                    <img id="aurora_8" class="aurora_8" src="img/photo_gallary/aurora_8.jpg" alt="Aurora 8">
-                    <img id="aurora_9" class="aurora_9" src="img/photo_gallary/aurora_9.jpg" alt="Aurora 9">
-                    <img id="aurora_10" class="aurora_10" src="img/photo_gallary/aurora_10.jpg" alt="Aurora 10">
-                </main>
-
-                <!-- =============== Modal for images =============== -->
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-                    <!-- The Close Button -->
-                    <span class="close">&times;</span>
-
-                    <!-- Modal Content (The Image) -->
-                    <img class="modal-content" id="img01">
-
-                    <!-- Modal Caption (Image Text) -->
-                    <div id="caption"></div>
-                </div> 
-
-                <script type="text/javascript">
-                    // Get the modal
-                    var modal = document.getElementById("myModal");
-
-                    // Get the image and insert it inside the modal - use its "alt" text as a caption
-                    let img1 = document.getElementById("aurora_1");
-                    let img2 = document.getElementById("aurora_2");
-                    let img3 = document.getElementById("aurora_3");
-                    let img4 = document.getElementById("aurora_4");
-                    let img5 = document.getElementById("aurora_5");
-                    let img6 = document.getElementById("aurora_6");
-                    let img7 = document.getElementById("aurora_7");
-                    let img8 = document.getElementById("aurora_8");
-                    let img9 = document.getElementById("aurora_9");
-                    let img10 = document.getElementById("aurora_10");
-
-                    var modalImg = document.getElementById("img01");
-                    var captionText = document.getElementById("caption");
-                    img1.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img2.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img3.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img4.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img5.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img6.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img7.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img8.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img9.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-                    img10.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                    }
-
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
-
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                        modal.style.display = "none";
-                    } 
-                </script>
-                <!-- =============== Modal for images =============== -->
-
-            </div>
-            <div class="padding-bottom">
-                <h3>hidden-text</h3>
-                <h3>hidden-text</h3>
-                <h3>hidden-text</h3>
+        </nav>
+    </header>
+    <!-- ============================== Page Content ============================== -->
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="text-light">Nutrition</h1>
+                    <a class="lead mt-4" id="scroll-to-content" href="#main-content"><i class="arrow down mt-4"></i></a>
+                </div>
             </div>
         </div>
-    </body>
+    </header>
+
+    <!-- Page Content -->
+    <section class="py-5" id="main-content">
+        <div class="container">
+            <h2 class="font-weight-light text-center text-light">Entdecke die vielfalt gesunder Mahlzeiten</h2>
+            <hr class="my-4 mx-4 text-light bg-light" />
+
+            <div class="row align-items-center top-banner-text">
+
+                <div class="col-md-6 text-center my-4">
+                    <img src="img/photo_gallary/nutrition/header-img.jpg" class="col-image">
+                </div>
+
+                <div class="col-md-6 text-light my-4">
+                    <h3 class="text-light">Heading Goes Here</h3>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repellat aliquid aliquam rerum
+                        eligendi dolores minus laborum similique tempore maiores saepe nisi ducimus expedita veritatis
+                        nemo, doloremque pariatur qui. In? </p>
+                </div>
+
+            </div>
+            <div class="row top-banner-text">
+                <div class="col-md-12 text-light my-4">
+                    <h3 class="text-light">Description</h3>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repellat aliquid aliquam rerum
+                        eligendi dolores minus laborum similique tempore maiores saepe nisi ducimus expedita veritatis
+                        nemo, doloremque pariatur qui. In? </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-4">
+            <!-- Photo Grid -->
+            <div class="row photos-rows" id="photos-col"></div>
+        </div>
+    </section>
+
+    <div class="detail-modal modal fade modal-fullscreen" id="showPhotoDetail" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 text-center my-4">
+                            <img src="img/photo_gallary/training/header-img.jpg" class="col-image" id="openImage">
+                        </div>
+                        <div class="col-md-6 my-4">
+                            <h3>Heading Goes Here</h3>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
+                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
+                                impedit, neque cumque ut! </p>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
+                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
+                                impedit, neque cumque ut! </p>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
+                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
+                                impedit, neque cumque ut! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5><a class="close" type="button"
+                                                                              data-dismiss="modal" aria-label="Close">×</a>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" class="d-block" method="POST">
+                        <div class="form-group"><label for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
+                        </div>
+                        <div class="form-group"><label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox"/> Remember me</label><a
+                                class="card-link text-dark float-right" href="#">Forgot Password?</a></div>
+                    </form>
+                    <form id="regForm" class="d-none" method="post">
+                        <div class="form-group"><label for="firstName">First Name</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
+                        </div>
+                        <div class="form-group"><label for="lastName">Last Name</label>
+                            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group"><label for="regUsername">Username</label>
+                            <input class="form-control" type="text" id="regUsername" name="regUsername" placeholder="Enter Username" />
+                        </div>
+                        <div class="form-group"><label for="regPassword">Password</label>
+                            <input class="form-control" type="password" id="regPassword" name="regPassword" placeholder="Enter Password" />
+                        </div>
+                        <div class="form-group"><label for="confirmPassword">Confirm Password</label>
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="card-link text-dark mr-auto" type="button" id="hide-button" onclick="showRegistrationForm();">Register</a>
+                    <a class="btn btn-dark" type="button" data-dismiss="modal"> Close</a>
+                    <a class="btn btn-primary standard-bg" type="button" onclick="authenticate()">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 
 </html>

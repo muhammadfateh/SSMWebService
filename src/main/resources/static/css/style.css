@@ -1,21 +1,80 @@
-* {
-    font-family: font-family: 'Trocchi', serif;
+/* * {
+    font-family: 'Trocchi', serif;
     font-weight: normal;
-}
+} */
 
 body {
     margin: 0;
     padding: 0;
     background:  url(../img/background.jpg) rgb(67, 68, 68);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-h1 {
-    font-size: 3.5vw;
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
 }
-h1,h2 {
-    color: white;
-    text-align: center;
+
+.arrow {
+    border: solid #fafafa;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 8px;
 }
-h3 {
-    visibility: hidden;
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.detail-modal {
+    padding: 2% !important;
+}
+
+.detail-modal .modal-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}
+
+.detail-modal .modal-content {
+    border: 0;
+    border-radius: 0;
+}
+
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    margin: 2% !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gallery-img:hover {
+    opacity: 0.7;
+}
+
+.col-image {
+    width: 100%
+}
+
+.top-banner-text {
+    background: rgba(0,0,0,0.3);
+}
+
+
+#photos-col div {
+    padding: 5px !important;
+    display: inline-block;
+}
+
+/* Media queries */
+@media only screen and (max-width: 900px) {
+    .gallery-img {
+        margin: 1% 0 !important;
+    }
 }

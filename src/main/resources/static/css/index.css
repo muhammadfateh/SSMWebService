@@ -1,21 +1,20 @@
 .head-image {
-    margin-top: 2%;
-}
-.head-image img {
     position: relative;
-    display: block;
-    margin: auto;
+    height: 100vh;
+}
+
+.head-image img {
     width: 60%;
     border-style: solid;
     border-color: white;
     border-radius: 2%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-
-
 /* Media queries */
-
 @media only screen and (max-width: 900px) {
     .head-image img {
         width: 90%;
