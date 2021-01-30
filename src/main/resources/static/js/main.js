@@ -186,7 +186,7 @@ function authenticate() {
             /* saving login status into SessionStorage */
             sessionStorage.setItem("LoggedIn",true);
             alert('login successful');
-            window.location.reload(false);
+            window.location.reload();
             downloadFile();
             //window.location = 'LoggedIn.html'
         },

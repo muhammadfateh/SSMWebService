@@ -43,7 +43,7 @@
 }
 
 
-.login-btn button{
+.login-btn button {
     height: 35px;
     line-height: 0;  
 }
@@ -58,5 +58,9 @@
     .navbar .navbar-brand,
     .navbar .nav-link {
         color: #fafafa;
+    }
+
+    .login-btn button, #btn-download-excel {
+        margin-bottom: 5px;
     }
 }
