@@ -56,7 +56,7 @@
                     </ul>
                     <div class="ml-auto login-btn">
                         <button class="btn btn-outline-secondary" id="btn-login" data-toggle="modal" data-target="#loginModal">Login</button>
-                        <button class="btn card-link text-light d-none" id="btn-download-excel">Workout Plan</button>
+                        <button class="btn card-link text-light d-none" id="btn-download-excel">Get Workout Plan</button>
                     </div>
                 </div>
             </div>
@@ -148,23 +148,26 @@
     </div>
 
 
+
     <!-- ============================== Login & Registration Form ============================== -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5><a class="close" type="button"
-                                                                              data-dismiss="modal" aria-label="Close">×</a>
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <a class="close" type="button" data-dismiss="modal" aria-label="Close">×</a>
                 </div>
                 <div class="modal-body">
 
                     <!-- ============================== Login Form ============================== -->
                     <form id="loginForm" method="POST">
                         <div class="form-group"><label for="username">Username</label>
-                            <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
+                            <input class="form-control" type="text" id="username" name="username"
+                                   placeholder="Enter Username"/>
                         </div>
                         <div class="form-group"><label for="password">Password</label>
-                            <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
+                            <input class="form-control" type="password" id="password" name="password"
+                                   placeholder="Enter Password"/>
                         </div>
                         <!--<div class="checkbox"><label><input type="checkbox"/> Remember me</label>
                             <a class="card-link text-dark float-right" href="#">Forgot Password?</a>
@@ -174,26 +177,31 @@
                     <!-- ============================== Registration Form ============================== -->
                     <form id="regForm" class="d-none" method="post">
                         <div class="form-group"><label for="firstName">First Name</label>
-                            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
+                            <input class="form-control" type="text" id="firstName" name="firstName"
+                                   placeholder="Enter Display Name"/>
                         </div>
                         <div class="form-group"><label for="lastName">Last Name</label>
-                            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
+                            <input class="form-control" type="text" id="lastName" name="lastName"
+                                   placeholder="Enter Email"/>
                         </div>
                         <div class="form-group"><label for="reg_username">Username</label>
-                            <input class="form-control" type="text" id="reg_username" name="reg_username" placeholder="Enter Username" />
+                            <input class="form-control" type="text" id="reg_username" name="reg_username"
+                                   placeholder="Enter Username"/>
                         </div>
                         <div class="form-group"><label for="reg_password">Password</label>
-                            <input class="form-control" type="password" id="reg_password" name="reg_password" placeholder="Enter Password" />
+                            <input class="form-control" type="password" id="reg_password" name="reg_password"
+                                   placeholder="Enter Password"/>
                         </div>
                         <div class="form-group"><label for="confirmPassword">Confirm Password</label>
-                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword"
+                                   placeholder="Enter Confirm Password"/>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <a class="card-link text-dark mr-auto" type="button" id="hide-button" onclick="showRegistrationForm();">Register</a>
                     <a class="btn btn-dark" type="button" data-dismiss="modal"> Close</a>
-                    <a class="btn btn-primary standard-bg" type="button" onclick="authenticate()">Login</a>
+                    <a class="btn btn-primary standard-bg" type="button" id="lblLoginBtn" onclick="authenticate()">Login</a>
                 </div>
             </div>
         </div>

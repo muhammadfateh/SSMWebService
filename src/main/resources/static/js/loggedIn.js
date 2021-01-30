@@ -20,7 +20,6 @@ $(document).ready(function () {
 function downloadFile() {
     /* Give the path of the file */
     let path = "ext-files/workout_plan.xlsx";
-    let file = new File(["aa"], "workout_plan");
     /* Creating a temporary link for downloading file */
     let link = document.createElement("a");
     /* providing file path to be downloaded */

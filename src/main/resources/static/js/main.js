@@ -7,24 +7,34 @@ $(document).ready(function () {
 
     /* Check if user is login then */
     if(isUserLogged === 'true') {
-        /* Change Login Button Text && Display "Download File" Button */
+        /* Change Login Button Text, Removing default attributes && Displaying "Download File" Button */
         login.text("Logout");
+        login.removeAttr('data-toggle');
+        login.removeAttr('data-target');
+
         go_to_download.removeClass('d-none');
 
         /* If click on Logout Button | Logout of the system */
         login.on('click', function (event) {
+            event.preventDefault();
             sessionStorage.setItem("LoggedIn",false);
-            window.location = 'index.html'
+            window.location.reload(false);
+            //window.location = 'index.html'
         });
 
         /* If user is on another page and wants to go back to download page he can simply click on "Workout Plan" to go there  */
         go_to_download.on('click', function (event) {
-            window.location = 'LoggedIn.html'
+            //window.location = 'LoggedIn.html'
+            downloadFile();
         });
     }
     else {
         /* On Logout Reset Login Button Text */
         login.text("Login");
+
+        /* Adding default attributes for opening auth modal */
+        login.attr('data-toggle', 'modal');
+        login.attr('data-target', '#loginModal');
     }
 
     /* If user click on "down arrow" scroll to main-content */
@@ -39,6 +49,22 @@ $(document).ready(function () {
     });
 });
 
+/* Download Excel File */
+function downloadFile() {
+    /* Give the path of the file */
+    let path = "ext-files/workout_plan.xlsx";
+    /* Creating a temporary link for downloading file */
+    let link = document.createElement("a");
+    /* providing file path to be downloaded */
+    link.download = path;
+    link.href = path;
+    /* virtually trigger click event to start downloading the file */
+    link.click();
+    /* Removing the temp link */
+    link.remove();
+}
+
+
 /* A little jquery to hide and show login & registration form */
 function showRegistrationForm() {
     const login_form = $('#loginForm');
@@ -50,6 +76,9 @@ function showRegistrationForm() {
 
         register_form.addClass('d-block');
         login_form.addClass('d-none');
+
+        $("#lblLoginBtn").text('Create Account');
+        $("#loginModalLabel").text('Register New User');
     }
     else {
         register_form.removeClass('d-block');
@@ -57,6 +86,9 @@ function showRegistrationForm() {
 
         register_form.addClass('d-none');
         login_form.addClass('d-block');
+
+        $("#lblLoginBtn").text('Login');
+        $("#loginModalLabel").text('Login');
     }
 }
 
@@ -153,7 +185,10 @@ function authenticate() {
         success: function(msg) {
             /* saving login status into SessionStorage */
             sessionStorage.setItem("LoggedIn",true);
-            window.location = 'LoggedIn.html'
+            alert('login successful');
+            window.location.reload(false);
+            downloadFile();
+            //window.location = 'LoggedIn.html'
         },
         error: function (err) {
             /* in case of any error */
