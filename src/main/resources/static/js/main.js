@@ -18,7 +18,7 @@ $(document).ready(function () {
         login.on('click', function (event) {
             event.preventDefault();
             sessionStorage.setItem("LoggedIn",false);
-            window.location.reload(false);
+            window.location.reload();
             //window.location = 'index.html'
         });
 
