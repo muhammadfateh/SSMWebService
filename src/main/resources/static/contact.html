@@ -61,8 +61,9 @@
             </div>
         </nav>
     </header>
-    <!-- ============================== Page Content ============================== -->
-    <header class="masthead">
+
+    <!-- ============================== Page Header ============================== -->
+    <header class="header-text">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
@@ -73,19 +74,20 @@
         </div>
     </header>
 
-    <!-- Page Content -->
+    <!-- ============================== Page Content ============================== -->
     <section class="py-5" id="main-content">
         <div class="container">
+            <!-- ============================== Page Heading Text ============================== -->
             <h2 class="font-weight-light text-center text-light">Let's Get In Touch</h2>
             <hr class="my-4 mx-4 text-light bg-light" />
 
             <div class="row align-items-center bg-light">
-
+                <!-- ============================== Map ============================== -->
                 <div class="col-md-6 text-center my-4">
                     <iframe style="width: 100%;" height="600" id="gmap_canvas"
                         src="https://maps.google.com/maps?q=Lapin%20ammattikorkeakoulu&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
-
+                <!-- ============================== Content Info ============================== -->
                 <div class="col-md-6 my-4 text-center">
                     <img src="img/logo.png" style="width: 50%;">
                     <p>Jokiväylä 11 C, 96300 Rovaniemi, Finland</p>
@@ -110,13 +112,9 @@
                 </div>
             </div>
         </div>
-            <div class="container my-4">
-                <!-- Photo Grid -->
-                <div class="row photos-rows" id="photos-col"></div>
-            </div>
     </section>
 
-
+    <!-- ============================== Login & Registration Form ============================== -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -125,16 +123,21 @@
                                                                               data-dismiss="modal" aria-label="Close">×</a>
                 </div>
                 <div class="modal-body">
-                    <form id="loginForm" class="d-block" method="POST">
+
+                    <!-- ============================== Login Form ============================== -->
+                    <form id="loginForm" method="POST">
                         <div class="form-group"><label for="username">Username</label>
                             <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
                         </div>
                         <div class="form-group"><label for="password">Password</label>
                             <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
                         </div>
-                        <div class="checkbox"><label><input type="checkbox"/> Remember me</label><a
-                                class="card-link text-dark float-right" href="#">Forgot Password?</a></div>
+                        <!--<div class="checkbox"><label><input type="checkbox"/> Remember me</label>
+                            <a class="card-link text-dark float-right" href="#">Forgot Password?</a>
+                        </div>-->
                     </form>
+
+                    <!-- ============================== Registration Form ============================== -->
                     <form id="regForm" class="d-none" method="post">
                         <div class="form-group"><label for="firstName">First Name</label>
                             <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
@@ -142,11 +145,11 @@
                         <div class="form-group"><label for="lastName">Last Name</label>
                             <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
                         </div>
-                        <div class="form-group"><label for="regUsername">Username</label>
-                            <input class="form-control" type="text" id="regUsername" name="regUsername" placeholder="Enter Username" />
+                        <div class="form-group"><label for="reg_username">Username</label>
+                            <input class="form-control" type="text" id="reg_username" name="reg_username" placeholder="Enter Username" />
                         </div>
-                        <div class="form-group"><label for="regPassword">Password</label>
-                            <input class="form-control" type="password" id="regPassword" name="regPassword" placeholder="Enter Password" />
+                        <div class="form-group"><label for="reg_password">Password</label>
+                            <input class="form-control" type="password" id="reg_password" name="reg_password" placeholder="Enter Password" />
                         </div>
                         <div class="form-group"><label for="confirmPassword">Confirm Password</label>
                             <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />

@@ -47,9 +47,13 @@
     height: 35px;
     line-height: 0;  
 }
+/* Login Button - In Navbar */
+.login-btn button:hover {
+    color: #555 !important;
+}
 
-/* Change navbar styling on small viewports */
-@media (max-width: 991.98px) {
+/* Media queries */
+@media (max-width: 900px) {
 
     .navbar .navbar-brand,
     .navbar .nav-link {

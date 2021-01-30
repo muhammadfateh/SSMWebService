@@ -1,3 +1,5 @@
+/* Using SessionStorage */
+/* Check if user is not login then redirect to home page */
 let isUserLogged = sessionStorage.getItem("LoggedIn");
 const login = $("#btn-login");
 if (isUserLogged === 'false') {
@@ -14,12 +16,18 @@ $(document).ready(function () {
         downloadFile();
     });
 });
-
+/* Download Excel File */
 function downloadFile() {
+    /* Give the path of the file */
     let path = "ext-files/workout_plan.xlsx";
     let file = new File(["aa"], "workout_plan");
+    /* Creating a temporary link for downloading file */
     let link = document.createElement("a");
+    /* providing file path to be downloaded */
     link.download = path;
-    link.href = file;
+    link.href = path;
+    /* virtually trigger click event to start downloading the file */
     link.click();
+    /* Removing the temp link */
+    link.remove();
 }

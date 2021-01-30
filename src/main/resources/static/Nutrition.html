@@ -62,8 +62,8 @@
             </div>
         </nav>
     </header>
-    <!-- ============================== Page Content ============================== -->
-    <header class="masthead">
+    <!-- ============================== Page Header ============================== -->
+    <header class="header-text">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
@@ -74,18 +74,19 @@
         </div>
     </header>
 
-    <!-- Page Content -->
+    <!-- ============================== Page Content ============================== -->
     <section class="py-5" id="main-content">
         <div class="container">
+            <!-- ============================== Page Heading Text ============================== -->
             <h2 class="font-weight-light text-center text-light">Entdecke die vielfalt gesunder Mahlzeiten</h2>
             <hr class="my-4 mx-4 text-light bg-light" />
 
-            <div class="row align-items-center top-banner-text">
-
+            <div class="row align-items-center banner-bg">
+                <!-- ============================== Image ============================== -->
                 <div class="col-md-6 text-center my-4">
-                    <img src="img/photo_gallary/nutrition/header-img.jpg" class="col-image">
+                    <img src="img/photo_gallery/nutrition/header-img.jpg" class="col-image">
                 </div>
-
+                <!-- ============================== Content ============================== -->
                 <div class="col-md-6 text-light my-4">
                     <h3 class="text-light">Heading Goes Here</h3>
                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repellat aliquid aliquam rerum
@@ -94,7 +95,8 @@
                 </div>
 
             </div>
-            <div class="row top-banner-text">
+            <!-- ============================== Little Extra Description ============================== -->
+            <div class="row banner-bg">
                 <div class="col-md-12 text-light my-4">
                     <h3 class="text-light">Description</h3>
                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non repellat aliquid aliquam rerum
@@ -105,24 +107,28 @@
         </div>
 
         <div class="container my-4">
-            <!-- Photo Grid -->
+            <!-- ============================== Photo Grid ============================== -->
             <div class="row photos-rows" id="photos-col"></div>
         </div>
     </section>
 
+    <!-- ============================== Detailed View Of Photos | Open onClick ============================== -->
     <div class="detail-modal modal fade modal-fullscreen" id="showPhotoDetail" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
+                    <!-- ============================== Close Modal ============================== -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                        <!-- ============================== Left Image ============================== -->
                         <div class="col-md-6 text-center my-4">
-                            <img src="img/photo_gallary/training/header-img.jpg" class="col-image" id="openImage">
+                            <img src="img/photo_gallery/training/header-img.jpg" class="col-image" id="openImage">
                         </div>
+                        <!-- ============================== Description Text ============================== -->
                         <div class="col-md-6 my-4">
                             <h3>Heading Goes Here</h3>
                             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
@@ -142,6 +148,7 @@
     </div>
 
 
+    <!-- ============================== Login & Registration Form ============================== -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -150,16 +157,21 @@
                                                                               data-dismiss="modal" aria-label="Close">×</a>
                 </div>
                 <div class="modal-body">
-                    <form id="loginForm" class="d-block" method="POST">
+
+                    <!-- ============================== Login Form ============================== -->
+                    <form id="loginForm" method="POST">
                         <div class="form-group"><label for="username">Username</label>
                             <input class="form-control" type="text" id="username" name="username" placeholder="Enter Username"/>
                         </div>
                         <div class="form-group"><label for="password">Password</label>
                             <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password"/>
                         </div>
-                        <div class="checkbox"><label><input type="checkbox"/> Remember me</label><a
-                                class="card-link text-dark float-right" href="#">Forgot Password?</a></div>
+                        <!--<div class="checkbox"><label><input type="checkbox"/> Remember me</label>
+                            <a class="card-link text-dark float-right" href="#">Forgot Password?</a>
+                        </div>-->
                     </form>
+
+                    <!-- ============================== Registration Form ============================== -->
                     <form id="regForm" class="d-none" method="post">
                         <div class="form-group"><label for="firstName">First Name</label>
                             <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter Display Name" />
@@ -167,11 +179,11 @@
                         <div class="form-group"><label for="lastName">Last Name</label>
                             <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter Email" />
                         </div>
-                        <div class="form-group"><label for="regUsername">Username</label>
-                            <input class="form-control" type="text" id="regUsername" name="regUsername" placeholder="Enter Username" />
+                        <div class="form-group"><label for="reg_username">Username</label>
+                            <input class="form-control" type="text" id="reg_username" name="reg_username" placeholder="Enter Username" />
                         </div>
-                        <div class="form-group"><label for="regPassword">Password</label>
-                            <input class="form-control" type="password" id="regPassword" name="regPassword" placeholder="Enter Password" />
+                        <div class="form-group"><label for="reg_password">Password</label>
+                            <input class="form-control" type="password" id="reg_password" name="reg_password" placeholder="Enter Password" />
                         </div>
                         <div class="form-group"><label for="confirmPassword">Confirm Password</label>
                             <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />

@@ -18,24 +18,24 @@ public class UserController {
     private final UserService userService = new UserService();
 
     @PostMapping(value = "signup")
-    public HttpEntity<?> createUser(@RequestBody User user){
+    public HttpEntity<?> createUser(@RequestBody User user) {
         try {
             userService.createUser(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
     @PostMapping(value = "login")
-    public ResponseEntity<?> login(@RequestBody String body){
+    public ResponseEntity<?> login(@RequestBody String body) {
         try {
             JSONObject object = new JSONObject(body);
             userService.signIn(object.getString("username"), object.getString("password"));
             return new ResponseEntity<>(HttpStatus.OK);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }catch (Exception e) {
+        } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
         }
     }
