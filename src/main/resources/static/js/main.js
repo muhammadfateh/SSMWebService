@@ -70,6 +70,9 @@ function showRegistrationForm() {
     const login_form = $('#loginForm');
     const register_form = $('#regForm');
 
+    /* if registration form has class "d-none" meaning not displaying,
+    *  then remove that class and add "d-block" class to show it, and hide login form by removing the class "d-block"
+    *  and adding "d-none" */
     if(register_form.hasClass('d-none')) {
         register_form.removeClass('d-none');
         login_form.removeClass('d-block');
@@ -80,6 +83,9 @@ function showRegistrationForm() {
         $("#lblLoginBtn").text('Create Account');
         $("#loginModalLabel").text('Register New User');
     }
+    /* else hide the registration form by
+    *  removing "d-block" and adding "d-none" class to it, and show login form by removing the class "d-none"
+    *  and adding "d-block" */
     else {
         register_form.removeClass('d-block');
         login_form.removeClass('d-none');
@@ -119,6 +125,7 @@ $.fn.serializeObject = function()
 
     return o;
 };
+
 /* function call on Login/Create Account Button */
 function authenticate() {
     const login_form = $('#loginForm');
@@ -127,7 +134,7 @@ function authenticate() {
     let callURL;
     let errors = 0;
 
-    /* checking which form is active */
+    /* checking which form is active, i.e. which form as class "d-block" */
     if(register_form.hasClass('d-block')) {
 
         /* form validation */
@@ -198,3 +205,18 @@ function authenticate() {
 
     return false;
 }
+
+
+/* Training.html | Mobility.html | Nutrition.html
+   When You Click on a photo (inside the grid) | this will show their details */
+$(document).on('show.bs.modal', '#showPhotoDetail', function (e) {
+    /* Get All details here, using different ways as per requirement */
+    /* Currently getting their name & picture to display them into the card */
+    let OpenImg = $(e.relatedTarget).attr('src');
+    let OpenImgHeading = $(e.relatedTarget).attr('data-heading');
+    let OpenContent = $(e.relatedTarget).next().html();
+
+    $("#openImage").attr('src', OpenImg);
+    $("#openImage-heading").text(OpenImgHeading);
+    $("#openImage-content").html(OpenContent);
+});

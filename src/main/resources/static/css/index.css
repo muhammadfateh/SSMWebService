@@ -1,23 +1,37 @@
-/* Header Image | Center Align */
-.head-image {
-    position: relative;
+
+/* styling image slider item  */
+.carousel .carousel-item {
+    width: 100%;
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.head-image img {
-    width: 60%;
-    border-style: solid;
-    border-color: white;
-    border-radius: 2%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* image for first slider */
+.carousel .carousel-item:first-of-type {
+    background-image: url('../img/photo_gallery/index/slider/1.jpg');
+}
+
+/* image for second slider */
+.carousel .carousel-item:nth-of-type(2) {
+    background-image: url('../img/photo_gallery/index/slider/2.jpg');
+}
+
+/* if you want to add more slides, simply duplicate the style property .carousel .carousel-item:nth-of-type(n)
+   where n is the slide number, and set background image */
+
+/* image for last slider */
+.carousel .carousel-item:last-of-type {
+    background-image: url('../img/photo_gallery/index/slider/3.jpg');
+}
+
+/* setting pre & next button background */
+.carousel-control-prev, .carousel-control-next {
+    background: rgba(0,0,0,0.1);
 }
 
 /* Media queries */
 @media only screen and (max-width: 900px) {
-    .head-image img {
-        width: 90%;
-    }
+
 }

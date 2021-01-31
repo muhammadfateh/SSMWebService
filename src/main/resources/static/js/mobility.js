@@ -1,14 +1,16 @@
 $(document).ready(function () {
-    /* Reading Images from directory and displaying dynamically writing html code */
+    /* Reading Images from directory and displaying dynamically and writing html code */
     let totalImages = 5;
-    for(let i = 1; i<=totalImages; i++) {
-        $('#photos-col').append("<div class='col-md-3'><img id='mobility_"+i+"' data-toggle='modal' data-target='#showPhotoDetail' class='gallery-img' src='img/photo_gallery/mobility/gallery/mobility_"+i+".jpg' alt='mobility "+i+"'></div>");
+    for (let i = 1; i <= totalImages; i++) {
+
+        /* Add Image Title in data-heading attribute of img
+        *  and, description for each image down inside div with id='img-content' */
+        let elem = "<div class='col-md-3'>" +
+            "<img id='mobility_" + i + "' data-toggle='modal' data-target='#showPhotoDetail' class='gallery-img' src='img/photo_gallery/mobility/gallery/mobility_" + i + ".jpg' alt='mobility " + i + "' data-heading='mobility " + i + "'/>" +
+            "<div class='d-none' id='img-content'>" +
+            "<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci impedit, neque cumque ut! </p>" +
+            "</div>" +
+            "</div>";
+        $('#photos-col').append(elem);
     }
-});
-/* When You Click on Photos | it will show their details */
-$(document).on('show.bs.modal','#showPhotoDetail', function (e) {
-    /* Get All details here, using different ways as per requirement */
-    /* Currently getting their name & picture to display them into the card */
-    let OpenImg = $(e.relatedTarget).attr('src');
-    $("#openImage").attr('src', OpenImg)
 });

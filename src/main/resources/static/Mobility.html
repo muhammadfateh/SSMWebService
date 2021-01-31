@@ -113,6 +113,7 @@
         </div>
     </section>
 
+
     <!-- ============================== Detailed View Of Photos | Open onClick ============================== -->
     <div class="detail-modal modal fade modal-fullscreen" id="showPhotoDetail" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -127,27 +128,20 @@
                     <div class="row">
                         <!-- ============================== Left Image ============================== -->
                         <div class="col-md-6 text-center my-4">
-                            <img src="img/photo_gallery/training/header-img.jpg" class="col-image" id="openImage">
+                            <img src="img/place-holder.jpg" class="col-image" id="openImage">
                         </div>
+
                         <!-- ============================== Description Text ============================== -->
+                        <!-- Now you can add content form mobility.js for each photo separately -->
                         <div class="col-md-6 my-4">
-                            <h3>Heading Goes Here</h3>
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
-                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
-                                impedit, neque cumque ut! </p>
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
-                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
-                                impedit, neque cumque ut! </p>
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores modi rem laudantium
-                                amet dolore eos tempore ipsa est velit pariatur corrupti nam totam, illo in adipisci
-                                impedit, neque cumque ut! </p>
+                            <h3 id="openImage-heading"></h3>
+                            <div id="openImage-content"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- ============================== Login & Registration Form ============================== -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -169,9 +163,6 @@
                             <input class="form-control" type="password" id="password" name="password"
                                    placeholder="Enter Password"/>
                         </div>
-                        <!--<div class="checkbox"><label><input type="checkbox"/> Remember me</label>
-                            <a class="card-link text-dark float-right" href="#">Forgot Password?</a>
-                        </div>-->
                     </form>
 
                     <!-- ============================== Registration Form ============================== -->
@@ -199,8 +190,12 @@
                     </form>
                 </div>
                 <div class="modal-footer">
+
+                    <!-- when you click on register, showRegistrationForm() will be called where,
+                    using Jquery I have add and remove classes "d-none" & "d-block" which displays or hide #regForm & #loginForm -->
+
                     <a class="card-link text-dark mr-auto" type="button" id="hide-button" onclick="showRegistrationForm();">Register</a>
-                    <a class="btn btn-dark" type="button" data-dismiss="modal"> Close</a>
+                    <a class="btn btn-dark" type="button" data-dismiss="modal"> Close </a>
                     <a class="btn btn-primary standard-bg" type="button" id="lblLoginBtn" onclick="authenticate()">Login</a>
                 </div>
             </div>
